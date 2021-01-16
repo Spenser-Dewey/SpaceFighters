@@ -147,7 +147,7 @@ class Bullet extends BaseComponent {
 
 class Powerup extends BaseComponent {
     constructor(pos, type, gameInstance) {
-        super(pos, Vector2D.create(0, 0), 60, 60, 0, gameInstance);
+        super(pos, Vector2D.create(0, 0), 20, 20, 0, gameInstance);
         this.type = type;
 
         this.lines.push(Line.create(Vector2D.create(-this.width / 2, -this.height / 2), Vector2D.create(this.width / 2, -this.height / 2)));
