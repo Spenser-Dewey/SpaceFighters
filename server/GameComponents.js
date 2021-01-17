@@ -281,7 +281,7 @@ class Ship extends BaseComponent {
         }
         if (this.keys["h"]) {
             if (!this.hyperjumpTimer && (this.powerups['turbo jump'] || this.gameInstance.frameTimer > this.lastJumpTime + this.jumpCooldown)) {
-                this.hyperjumpTimer = this.hyperJumpDelay / (1 + 5 * !!this.powerups["turbo jump"]);
+                this.hyperjumpTimer = this.hyperJumpDelay / (1 + 2 * !!this.powerups["turbo jump"]);
             }
         }
         if (Constants.debug) {
@@ -321,7 +321,7 @@ class Ship extends BaseComponent {
         }
 
         if (this.hyperjumpTimer) {
-            let scaleFactor = this.hyperjumpTimer / (this.hyperJumpDelay / (1 + 5 * !!this.powerups["turbo jump"]));
+            let scaleFactor = Math.min(this.hyperjumpTimer / (this.hyperJumpDelay / (1 + 2 * !!this.powerups["turbo jump"])), 1);
             this.width = (this.trueWidth / (1 + !!this.powerups["minify"])) * scaleFactor;
             this.height = (this.trueHeight / (1 + !!this.powerups["minify"])) * scaleFactor;
 

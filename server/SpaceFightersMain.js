@@ -105,8 +105,8 @@ function checkCollisions() {
       GameState.events.collisions.push({ asteroid: aster, ship: GameState.ships[i] });
     }
     else if (bullet = GameState.bullets.find(bullet => overlap(bullet, GameState.ships[i]))) {
-      if(!GameState.bullets[i].drill) {
-        GameState.bullets[i].destroy();
+      if(!bullet.drill) {
+        bullet.destroy();
       }
       
       if (GameState.ships[i].powerups["reflection"]) {

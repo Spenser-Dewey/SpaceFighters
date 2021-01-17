@@ -1,10 +1,10 @@
 const width = 5000;
 const height = 5000;
-const minAsteroids = 1;
+const minAsteroids = 45;
 const clientWidth = 1500;
 const clientHeight = 800;
 const powerupProbability = .01;
-const maxPowerups = 20;
+const maxPowerups = 25;
 const powerups = {
     "invincibility": 400,
     "reflection": 400,
